@@ -4,7 +4,7 @@
 	import Input from '../../../../components/input.svelte';
 	import Textarea from '../../../../components/textarea.svelte';
 
-	let isLoading = $state(false)
+	let isLoading = $state(false);
 
 	// Image form & preview state
 	let inputImageURL: HTMLInputElement;
@@ -37,12 +37,12 @@
 		}
 
 		// Update image
-		updateImage(js.url)
+		updateImage(js.url);
 	}
 
 	$effect(() => {
-		if(productInfo){
-			updateImage(productInfo.image)
+		if (productInfo) {
+			updateImage(productInfo.image);
 		}
 	});
 </script>
@@ -50,7 +50,11 @@
 <div class="flex justify-center">
 	<div>
 		<h1 class="mb-3 text-3xl">{data.type === 'ADD' ? 'เพิ่ม' : 'แก้ไข'}สินค้า</h1>
-		<form method="POST" class="min-w-[712px] space-y-2 bg-white p-5 shadow-lg" onsubmit={() => isLoading = true}>
+		<form
+			method="POST"
+			class="min-w-[712px] space-y-2 bg-white p-5 shadow-lg"
+			onsubmit={() => (isLoading = true)}
+		>
 			<input type="hidden" name="image" bind:this={inputImageURL} />
 			<Input
 				label="ชื่อสินค้า"
@@ -71,8 +75,22 @@
 				placeholder="หอมคั่วจากโรงงาน"
 				value={productInfo.description || ''}
 			/>
-			<Input  label="ราคา / ชิ้น" name="price" type="number" min={0}  value={productInfo.price} required />
-			<Input label="จำนวนคงเหลือ" name="stocks" type="number" min={0} value={productInfo.stocks} required />
+			<Input
+				label="ราคา / ชิ้น"
+				name="price"
+				type="number"
+				min={0}
+				value={productInfo.price}
+				required
+			/>
+			<Input
+				label="จำนวนคงเหลือ"
+				name="stocks"
+				type="number"
+				min={0}
+				value={productInfo.stocks}
+				required
+			/>
 			<Button type="submit" class="w-full" loading={isLoading}>บันทึก</Button>
 		</form>
 	</div>
