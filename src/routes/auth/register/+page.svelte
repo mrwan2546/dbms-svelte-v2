@@ -8,7 +8,7 @@
 <div class="flex justify-center">
 	<div class="min-w-[512px] space-y-6">
 		<h1 class="text-center text-4xl font-light uppercase">สมัครสมาชิก</h1>
-		<form class="space-y-3 rounded-md bg-white p-5 shadow-lg">
+		<form method="POST" class="space-y-3 rounded-md bg-white p-5 shadow-lg">
 			<Input label="ชื่อผู้ใช้งาน" name="account" placeholder={'mrcoffee'} required />
 			<Input label="รหัสผ่าน" name="password" type="password" placeholder={'********'} required />
 			<Input label="ชื่อที่แสดงหน้าเว็บ" name="display_name" placeholder={'Mr. Coffee'} required />

@@ -8,7 +8,7 @@ import type { Actions, RequestEvent } from './$types';
 import { handlerError } from '$lib/handler/error.handler';
 
 export const actions = {
-    default: async ({ request, cookies }: RequestEvent) => {
+    default: async ({ request }: RequestEvent) => {
         try {
             const body = await registerSchema.parseAsync(Object.fromEntries(await request.formData()));
 
@@ -24,12 +24,6 @@ export const actions = {
             // Register user
             const password = await hash(body.password);
             await conn.execute(constant.registerUser, [body.account, password, body.display_name]);
-
-            // Set cookie
-            cookies.set('register_success', '1', {
-                path: '/',
-                sameSite: 'lax'
-            });
 
             return redirect(301, '/auth/login');
         } catch (e) {
