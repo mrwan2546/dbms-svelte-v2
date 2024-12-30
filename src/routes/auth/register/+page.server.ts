@@ -24,10 +24,10 @@ export const actions = {
             // Register user
             const password = await hash(body.password);
             await conn.execute(constant.registerUser, [body.account, password, body.display_name]);
-
-            return redirect(301, '/auth/login');
         } catch (e) {
             return handlerError(e);
         }
+
+        redirect(301, '/auth/login');
     }
 } satisfies Actions;
