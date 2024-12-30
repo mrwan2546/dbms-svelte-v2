@@ -8,10 +8,10 @@
 
 <div class="flex justify-center">
 	<div class="min-w-[512px] space-y-6">
-		<h1 class="text-center text-4xl font-light uppercase">Login</h1>
+		<h1 class="text-center text-4xl font-light uppercase">เข้าสู่ระบบ</h1>
 		<form onsubmit={() => isLoading = true} method="POST" class="space-y-3 rounded-md bg-white p-5 shadow-lg">
-			<Input label="Username" name="account" placeholder={'lnwzaza'} required />
-			<Input label="Password" name="password" type="password" placeholder={'********'} required />
+			<Input label="ชื่อผู้ใช้งาน" name="account" placeholder={'mrcoffee'} required />
+			<Input label="รหัสผ่าน" name="password" type="password" placeholder={'********'} required />
 			{#if form !== null && !form.success}
 				<div class="w-full rounded-sm bg-red-500 p-3 text-white">
 					{form?.message || "Unknown error"}
@@ -20,8 +20,8 @@
 			<Button type="submit" loading={isLoading} class="w-full">Login</Button>
 			<div class="text-center">
 				<span
-					>No account?
-					<a href="/auth/register" class="text-blue-500 no-underline hover:underline">Register</a> it.</span
+					>ไม่มีผู้ใช้
+					<a href="/auth/register" class="text-blue-500 no-underline hover:underline">สมัครสมาชิก</a> เลยสิ</span
 				>
 			</div>
 		</form>

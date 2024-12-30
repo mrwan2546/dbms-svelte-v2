@@ -16,7 +16,7 @@ export const actions = {
         if (accounts.length === 0) {
             return {
                 success: false,
-                message: 'Invalid credential'
+                message: 'ชื่อผู้ใช้งาน / รหัสผ่านไม่ถูกต้อง'
             };
         }
 
@@ -24,7 +24,7 @@ export const actions = {
         if (!(await verify(account.password, body.password))) {
             return {
                 success: false,
-                message: 'Invalid credential'
+                message: 'ชื่อผู้ใช้งาน / รหัสผ่านไม่ถูกต้อง'
             };
         }
 
