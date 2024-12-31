@@ -27,15 +27,15 @@
 <div class="mt-1 flex w-fit">
 	<button
 		onclick={decrement}
-		class={`rounded-l-md ${disabled ? 'bg-slate-500 hover:bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'} px-2 duration-300 `}
+		class={`rounded-l-md ${disabled ? 'bg-slate-500 hover:bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'}  px-1 md:px-2 duration-300 `}
 		{disabled}
 	>
 		<Minus color="#fff" />
 	</button>
-	<input readonly {name} {value} class="w-[48px] border border-slate-300 text-center" />
+	<input readonly {name} {value} class="w-[44px] border border-slate-300 text-center" />
 	<button
 		onclick={increment}
-		class={`rounded-r-md ${disabled ? 'bg-slate-500 hover:bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'} px-2 duration-300 `}
+		class={`rounded-r-md ${disabled ? 'bg-slate-500 hover:bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'} px-1 md:px-2 duration-300 `}
 		{disabled}
 	>
 		<Plus color="#fff" />

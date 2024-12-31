@@ -166,8 +166,8 @@
 				</div>
 				<hr class="my-3" />
 				<div class="mb-3 flex items-end justify-between">
-					<h4 class="text-xl font-bold">รวมทั้งสิ้น</h4>
-					<h4 class="text-3xl font-bold">{total.toLocaleString()} บาท</h4>
+					<h4 class="text-base font-bold md:text-xl">รวมทั้งสิ้น</h4>
+					<h4 class="text-xl font-bold md:text-3xl">{total.toLocaleString()} บาท</h4>
 				</div>
 				<Button loading={isLoading} type="submit" class="w-full">สั่งซื้อสินค้า</Button>
 			</form>

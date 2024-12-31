@@ -47,7 +47,7 @@
 										/>
 									</a>
 									<div>
-										<h4 class="text-2xl font-bold">{item.title}</h4>
+										<h4 class="text-lg md:text-2xl font-medium">{item.title}</h4>
 										<span>จำนวนสินค้า: {item.units} ชิ้น</span>
 									</div>
 								</div>
@@ -61,8 +61,8 @@
 					</div>
 					<hr />
 					<div class="flex items-end justify-between px-6 py-5">
-						<h4 class="text-xl font-bold">รวมทั้งสิ้น</h4>
-						<h4 class="text-3xl font-bold">{caculateTotal(order.items).toLocaleString()} บาท</h4>
+						<h4 class="text-base md:text-xl font-bold">รวมทั้งสิ้น</h4>
+						<h4 class="text-xl md:text-3xl font-bold">{caculateTotal(order.items).toLocaleString()} บาท</h4>
 					</div>
 				</div>
 			{/each}

@@ -17,10 +17,10 @@
 
 <div class="flex w-full justify-between rounded-sm bg-white p-3">
 	<div class="flex space-x-3">
-		<img src={image} class="max-h-[128px]" alt={`${name} images.`} />
+		<img src={image} class="max-h-[128px] max-w-[128px]" alt={`${name} images.`} />
 		<div>
-			<h4 class="text-2xl font-bold">{name}</h4>
-			<span>จำนวนสินค้า</span>
+			<h4 class="text-lg md:text-2xl font-medium">{name}</h4>
+			<span class="text-sm md:text-base">จำนวนสินค้า</span>
 			<Stepper
 				{onClick}
 				name="test"
@@ -33,9 +33,9 @@
 	</div>
 	<div>
 		{#if stocks > 0}
-			<h4 class="text-xl font-medium">{(price * units).toLocaleString()} บาท</h4>
+			<h4 class="text-base md:text-xl font-medium text-end">{(price * units).toLocaleString()} บาท</h4>
 		{:else}
-			<span class="!text-red-500">สินค้าหมด</span>
+			<span class="!text-red-500 text-sm md:text-base text-end">สินค้าหมด</span>
 		{/if}
 		<button class="flex text-red-500 items-center space-x-1 hover:underline float-end" onclick={() => onDelete()}>
 			<Trash size={18} />
