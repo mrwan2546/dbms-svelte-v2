@@ -52,7 +52,7 @@
 									</div>
 								</div>
 								<div>
-									<h4 class="text-xl font-medium">
+									<h4 class="text-base md:text-xl font-medium text-end">
 										{(item.price * item.units).toLocaleString()} บาท
 									</h4>
 								</div>
