@@ -27,7 +27,7 @@
 <nav
 	class="flex w-full items-center justify-between rounded-b-2xl bg-white px-6 md:px-12 py-6 shadow-lg"
 >
-	<a href="/" class="flex items-center space-x-1 md:space-y-3">
+	<a href="/" class="flex items-center space-x-1 md:space-x-3">
 		<Coffee size={24} />
 		<h1 class="text-base md:text-2xl uppercase">Coffee Store</h1>
 	</a>
