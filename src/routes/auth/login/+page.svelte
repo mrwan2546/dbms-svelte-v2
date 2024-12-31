@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="min-w-[512px] space-y-6">
+	<div class="max-w-full md:min-w-[512px] space-y-6">
 		<h1 class="text-center text-4xl font-light uppercase">เข้าสู่ระบบ</h1>
 		<form onsubmit={() => isLoading = true} method="POST" class="space-y-3 rounded-md bg-white p-5 shadow-lg">
 			<Input label="ชื่อผู้ใช้งาน" name="account" placeholder={'mrcoffee'} required />

@@ -14,7 +14,7 @@
 <div class="w-full transform rounded-xl bg-white shadow-lg duration-300 hover:-translate-y-1">
 	<a href={`/product/${data.id}`}>
 		<div>
-			<img alt="test" class="h-[412px] w-full rounded-t-md object-cover" src={data.image} />
+			<img alt="test" class="h-[256px] w-full rounded-t-md object-cover" src={data.image} />
 		</div>
 		<div class="p-3">
 			<div class="mb-2">

@@ -97,13 +97,13 @@
 	});
 </script>
 
-<div>
+<div class="px-3 md:px-0">
 	<div class="text-3xl uppercase flex items-center space-x-1">
 		<ShoppingCart size={32} />
 		<span>ชำระเงิน</span>
 	</div>
-	<div class="mt-3 flex w-full justify-between space-x-3">
-		<div class={`${baskets.length > 0 ? 'w-[70%]' : 'w-full'} space-y-3 overflow-y-auto h-[512px]`}>
+	<div class="mt-3 block md:flex w-full justify-between space-x-0 md:space-x-3 space-y-3 md:space-y-0">
+		<div class={`${baskets.length > 0 ? 'w-full md:w-[70%]' : 'w-full'} space-y-3 overflow-y-auto h-full md:h-[512px]`}>
 			{#if baskets.length > 0}
 				{#each baskets as basket, idx}
 					<Products
@@ -136,7 +136,7 @@
 		<!-- svelte-ignore event_directive_deprecated -->
 		<!-- svelte-ignore component_name_lowercase -->
 		{#if baskets.length > 0}
-			<form class="w-[30%] bg-white p-5" on:submit|preventDefault={checkout}>
+			<form class="w-full md:w-[30%] bg-white p-5" on:submit|preventDefault={checkout}>
 				<h4 class="text-3xl font-light uppercase">รายละเอียดจัดส่ง</h4>
 				<hr class="my-3" />
 				<div class="space-y-2">

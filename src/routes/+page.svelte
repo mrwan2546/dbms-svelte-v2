@@ -23,7 +23,7 @@
 
 <!-- svelte-ignore a11y_missing_attribute -->
 {#if data.products.length > 0 || data.isAdmin}
-	<div class="grid grid-cols-4 gap-8">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
 		{#each data.products as product}
 			<Card data={product} editable={data.isAdmin}>
 				<hr />
@@ -39,9 +39,10 @@
 			<!-- svelte-ignore a11y_consider_explicit_label -->
 			<a
 				href="/product/admin/add"
-				class="flex h-[565px] w-full transform items-center justify-center rounded-xl border-4 border-dashed border-gray-500 duration-300 hover:-translate-y-1"
+				class="flex h-[256px] w-full transform items-center justify-center rounded-xl border-4 border-dashed border-gray-500 duration-300 hover:-translate-y-1"
 			>
 				<Plus size={64} />
+				<br />
 				<span>เพิ่มสินค้า</span>
 			</a>
 		{/if}

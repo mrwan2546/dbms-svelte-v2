@@ -6,6 +6,6 @@
 
 <Navbar />
 
-<main class="container mx-auto">
+<main class="container mx-auto my-6 md:my-8">
 	{@render children()}
 </main>

@@ -35,9 +35,9 @@
 	}
 </script>
 
-<div class="flex max-h-[512px]">
-	<img alt="test" class="max-w-[40%] rounded-l-xl object-cover" src={data.product.image} />
-	<div class="w-[60%] rounded-r-xl bg-white p-5">
+<div class="block md:flex max-h-[512px] px-6">
+	<img alt="test" class="max-w-full md:max-w-[40%] rounded-t-xl md:rounded-l-xl object-cover" src={data.product.image} />
+	<div class="max-w-full md:w-[60%] rounded-b-xl md:rounded-r-xl bg-white p-5">
 		<div>
 			<h1 class="text-3xl font-semibold">{data.product.title}</h1>
 			<span>สินค้าคงเหลือ: {data.product.stocks} ชิ้น</span>
@@ -55,7 +55,7 @@
 				onClick={(current) => (unit = current)}
 			/>
 		</div>
-		<Button onClick={addToBasket} loading={isLoading} disabled={data.product.stocks <= 0}
+		<Button class="w-full md:w-fit" onClick={addToBasket} loading={isLoading} disabled={data.product.stocks <= 0}
 			>{data.product.stocks <= 0 ? 'สินค้าหมด' : 'ซื้อสินค้า'}</Button
 		>
 

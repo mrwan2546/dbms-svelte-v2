@@ -14,7 +14,7 @@
 
 	let { disabled, onClick, loading, type, children, class: className, to }: Props = $props();
 
-	let classz = `${disabled || loading ? 'bg-slate-500 hover:bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'} flex justify-center rounded-lg px-3 py-3 text-white duration-300 ${className}`
+	let classz = `${disabled || loading ? '!bg-slate-500 hover:!bg-slate-700' : 'bg-purple-500 hover:bg-purple-700'} flex justify-center rounded-lg px-3 py-3 text-white duration-300 ${className}`
 </script>
 
 {#if to}
