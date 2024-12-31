@@ -37,11 +37,9 @@
 		{:else}
 			<span class="!text-red-500">สินค้าหมด</span>
 		{/if}
-		<!-- svelte-ignore a11y_click_events_have_key_events -->
-		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div class="flex justify-end text-red-500 items-center space-x-1 hover:underline cursor-pointer" onclick={() => onDelete()}>
+		<button class="flex text-red-500 items-center space-x-1 hover:underline float-end" onclick={() => onDelete()}>
 			<Trash size={18} />
 			<span>ลบ</span>
-		</div>
+		</button>
 	</div>
 </div>

@@ -41,7 +41,8 @@
 		}
 	}
 
-	async function checkout(e: SubmitEvent) {
+	async function checkout(e: Event) {
+		e.preventDefault();
 		isLoading = true;
 		const resp = await fetch('/api/order/checkout', {
 			method: 'POST',
@@ -98,12 +99,16 @@
 </script>
 
 <div class="px-3 md:px-0">
-	<div class="text-3xl uppercase flex items-center space-x-1">
+	<div class="flex items-center space-x-1 text-3xl uppercase">
 		<ShoppingCart size={32} />
 		<span>ชำระเงิน</span>
 	</div>
-	<div class="mt-3 block md:flex w-full justify-between space-x-0 md:space-x-3 space-y-3 md:space-y-0">
-		<div class={`${baskets.length > 0 ? 'w-full md:w-[70%]' : 'w-full'} space-y-3 overflow-y-auto h-full md:h-[512px]`}>
+	<div
+		class="mt-3 block w-full justify-between space-x-0 space-y-3 md:flex md:space-x-3 md:space-y-0"
+	>
+		<div
+			class={`${baskets.length > 0 ? 'w-full md:w-[70%]' : 'w-full'} h-full space-y-3 overflow-y-auto md:h-[512px]`}
+		>
 			{#if baskets.length > 0}
 				{#each baskets as basket, idx}
 					<Products
@@ -122,8 +127,7 @@
 			{:else}
 				<div class="flex justify-center">
 					<div class="relative">
-						<!-- svelte-ignore element_invalid_self_closing_tag -->
-						<div class="rounded-full bg-white/50 p-24" />
+						<div class="rounded-full bg-white/50 p-24"></div>
 						<ShoppingCart size={128} class="absolute inset-0 m-auto text-gray-400" />
 					</div>
 				</div>
@@ -133,10 +137,8 @@
 				</div>
 			{/if}
 		</div>
-		<!-- svelte-ignore event_directive_deprecated -->
-		<!-- svelte-ignore component_name_lowercase -->
 		{#if baskets.length > 0}
-			<form class="w-full md:w-[30%] bg-white p-5" on:submit|preventDefault={checkout}>
+			<form class="w-full bg-white p-5 md:w-[30%]" onsubmit={checkout}>
 				<h4 class="text-3xl font-light uppercase">รายละเอียดจัดส่ง</h4>
 				<hr class="my-3" />
 				<div class="space-y-2">

@@ -69,8 +69,7 @@
 		{:else}
 			<div class="flex justify-center">
 				<div class="relative">
-					<!-- svelte-ignore element_invalid_self_closing_tag -->
-					<div class="rounded-full bg-white/50 p-24" />
+					<div class="rounded-full bg-white/50 p-24"></div>
 					<FileQuestion size={128} class="absolute inset-0 m-auto text-gray-400" />
 				</div>
 			</div>

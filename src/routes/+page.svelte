@@ -21,9 +21,8 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y_missing_attribute -->
 {#if data.products.length > 0 || data.isAdmin}
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
+	<div class="grid grid-cols-1 gap-8 px-5 md:grid-cols-3">
 		{#each data.products as product}
 			<Card data={product} editable={data.isAdmin}>
 				<hr />
@@ -36,7 +35,6 @@
 			</Card>
 		{/each}
 		{#if data.isAdmin}
-			<!-- svelte-ignore a11y_consider_explicit_label -->
 			<a
 				href="/product/admin/add"
 				class="flex h-[256px] w-full transform items-center justify-center rounded-xl border-4 border-dashed border-gray-500 duration-300 hover:-translate-y-1"
@@ -51,8 +49,7 @@
 {#if !data.isAdmin && data.products.length === 0}
 	<div class="flex justify-center">
 		<div class="relative">
-			<!-- svelte-ignore element_invalid_self_closing_tag -->
-			<div class="rounded-full bg-white/50 p-24" />
+			<div class="rounded-full bg-white/50 p-24"></div>
 			<ShoppingBag size={128} class="absolute inset-0 m-auto text-gray-400" />
 		</div>
 	</div>

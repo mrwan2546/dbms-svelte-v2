@@ -76,8 +76,7 @@
 				</div>
 			{/if}
 			{#if imagePreview && !isLoadingUpload}
-				<!-- svelte-ignore a11y_img_redundant_alt -->
-				<img src={imagePreview} alt="Product image" class="mx-auto max-h-[512px]" />
+				<img src={imagePreview} alt="" class="mx-auto max-h-[512px]" />
 			{/if}
 			<Textarea
 				label="รายละเอียดสินค้า"
