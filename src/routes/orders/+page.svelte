@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { IOrdersParsed } from '$lib/interface/order.interface.js';
+	import dayjs from "$lib/dayjs.js"
 	import { FileQuestion } from 'lucide-svelte';
 
 	const { data } = $props();
@@ -23,6 +24,7 @@
 					<div class="p-3">
 						<h1 class="text-xl font-medium">รหัสรายการ:</h1>
 						<h4 class="text-sm md:text-base">{order.order_id}</h4>
+						<span class="text-xs text-gray-500">{dayjs(order.created_at).format("DD MMM YYYY, HH:mm:ss")}</span>
 					</div>
 					<hr />
 					<div class="p-3">
