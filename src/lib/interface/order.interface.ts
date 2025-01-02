@@ -1,5 +1,6 @@
 export interface ICheckoutByBasketId {
-    id: number
+    id: number;
+    created_at: Date;
     product_id: number;
     title: string
     image: string
@@ -20,6 +21,7 @@ export interface IOrders {
 
 export interface IOrdersParsed {
     id: number;
+    created_at: Date;
     order_id: string;
     shipping_name: string;
     shipping_address: string;
