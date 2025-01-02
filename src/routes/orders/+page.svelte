@@ -7,7 +7,7 @@
 	const orders = data.orders || [];
 
 	function caculateTotal(items: IOrdersParsed['items']) {
-		return items.reduce((total, data) => total + data.price * data.units, 0);
+		return (items || []).reduce((total, data) => total + data.price * data.units, 0);
 	}
 
 	function parseMobile(raw: string) {
