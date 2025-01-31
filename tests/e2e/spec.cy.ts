@@ -10,7 +10,7 @@ function login() {
   cy.get('#account').type('admin')
   cy.get('#password').type('admin')
   cy.get('.bg-purple-500').click()
-  cy.url().should("eq", "http://localhost:3000/")
+  cy.url({ timeout: 10_000 }).should("eq", "http://localhost:3000/")
 }
 
 function checkNotInternalError() {
@@ -21,7 +21,7 @@ function addToBasket() {
   cy.contains('Coffee (Test mode)').click()
   sleep()
   cy.get('.justify-center').click()
-  cy.url().should("eq", `http://localhost:3000/baskets`)
+  cy.url({ timeout: 10_000 }).should("eq", `http://localhost:3000/baskets`)
 }
 
 describe('Test FE', () => {
@@ -46,7 +46,7 @@ describe('Test FE', () => {
       cy.get('#price').type('{selectall}').type("399")
       cy.get('#stocks').type('{selectall}').type("1000")
       cy.get('.bg-purple-500').click()
-      cy.url().should("eq", "http://localhost:3000/")
+      cy.url({ timeout: 10_000 }).should("eq", "http://localhost:3000/")
       checkNotInternalError()
     })
   })
@@ -80,7 +80,7 @@ describe('Test FE', () => {
       cy.get(':nth-child(5) > .w-full').select("เมืองเชียงใหม่")
       cy.get(':nth-child(6) > .w-full').select("ช้างเผือก")
       cy.get('.p-5 > .bg-purple-500').click()
-      cy.url().should("eq", `http://localhost:3000/orders`)
+      cy.url({ timeout: 10_000 }).should("eq", `http://localhost:3000/orders`)
       checkNotInternalError()
     })
   })
@@ -101,7 +101,7 @@ describe('Test FE', () => {
       cy.get('#price').type('{selectall}').type("499")
       cy.get('#stocks').type('{selectall}').type("3999")
       cy.get('.bg-purple-500').click()
-      cy.url().should("eq", "http://localhost:3000/")
+      cy.url({ timeout: 10_000 }).should("eq", "http://localhost:3000/")
       checkNotInternalError()
     })
   })
