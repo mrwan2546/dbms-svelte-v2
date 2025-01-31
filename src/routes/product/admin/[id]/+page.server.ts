@@ -65,6 +65,8 @@ export const load: PageServerLoad = async ({ cookies, params }: RequestEvent) =>
     if (params.id !== "add") {
         // Get products
         const [products] = await conn.query<TProduct>(constant.getProductInfo, [params.id])
+
+        // console.log(products)
         // console.log(products)
         if (products.length === 0) {
             return error(404, {

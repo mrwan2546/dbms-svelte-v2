@@ -13,9 +13,9 @@ export const load: PageServerLoad = async ({ cookies }) => {
 
         // Check product exist
         const [orders] = await conn.query<IOrders>(constant.getOrders, [user.id]);
-        if (orders[0].id) return {
+        if (orders[0]?.id) return {
             orders: orders.map((i) => ({
-                ...i,
+                ...(i || {}),
                 items: JSON.parse(i.items)
             }) as IOrdersParsed),
         }

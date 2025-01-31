@@ -2,7 +2,7 @@ export default {
     // Products
     getProductList: "SELECT * FROM products ORDER BY created_at DESC",
     getProductInfo: "SELECT * FROM products WHERE id = ? LIMIT 0,1",
-    createProduct: "INSERT INTO products (title, description, image, price, stocks) VALUES(?,?,?,?,?)",
+    createProduct: "INSERT INT products (title, description, image, price, stocks) VALUES(?,?,?,?,?)",
     updateProductById: "UPDATE products SET title = ?, description = ?, image = ?, price = ?, stocks = ? WHERE id = ?",
     updateProductUnitById: "UPDATE products SET stocks = ? WHERE id = ?",
     deleteProductById: "DELETE FROM products WHERE id = ?",
@@ -25,7 +25,7 @@ export default {
     createCheckout: "INSERT INTO orders (order_id, user_id) VALUES (?, ?) RETURNING (id)",
     createCheckoutItems: "INSERT INTO order_items (order_id, order_product_id, order_price, order_units) VALUES (?,?,?,?)",
     getOrderItemByProductId: "SELECT order_id FROM order_items WHERE order_product_id = ?",
-    deleteManyOrderById: "DELETE FROM orders WHERE id IN(?)",
+    deleteManyOrderById: "DELETE FROM orders WHERE id IN (?)",
     // Shipping
     createShipping: "INSERT INTO shipping (order_id, name, address, address_id, mobile) VALUES (?,?,?,?,?)"
 }

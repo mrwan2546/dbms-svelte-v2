@@ -31,7 +31,9 @@ export async function DELETE({ cookies, params }: RequestEvent) {
         // Get order items
         const [ordersItems] = await conn.query<{ order_id: number; }>(constant.getOrderItemByProductId, [product.id])
         // Do delete
-        await conn.execute(constant.deleteManyOrderById, ordersItems.map((i) => i.order_id))
+        if (ordersItems.length > 0) {
+            await conn.execute(constant.deleteManyOrderById, ordersItems.map((i) => i.order_id))
+        }
         // Then remove products
         await conn.execute(constant.deleteProductById, [params.id])
 
