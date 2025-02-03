@@ -2,7 +2,7 @@ export default {
     // Products
     getProductList: "SELECT * FROM products ORDER BY created_at DESC",
     getProductInfo: "SELECT * FROM products WHERE id = ? LIMIT 0,1",
-    createProduct: "INSERT INT products (title, description, image, price, stocks) VALUES(?,?,?,?,?)",
+    createProduct: "INSERT INTO products (title, description, image, price, stocks) VALUES(?,?,?,?,?)",
     updateProductById: "UPDATE products SET title = ?, description = ?, image = ?, price = ?, stocks = ? WHERE id = ?",
     updateProductUnitById: "UPDATE products SET stocks = ? WHERE id = ?",
     deleteProductById: "DELETE FROM products WHERE id = ?",
